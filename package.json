@@ -19,7 +19,9 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"**/*.{js,json,css,md,yml}\"",
     "watch:css": "postcss src/tailwind.css -o src/generated.css",
-    "build:css": "postcss src/tailwind.css -o src/generated.css"
+    "build:css": "postcss src/tailwind.css -o src/generated.css",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +39,11 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/react": "^5.3.18",
     "autoprefixer": "^9.7.6",
     "postcss-cli": "^7.1.0",
     "prettier": "^2.0.4",
