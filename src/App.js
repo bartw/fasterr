@@ -3,16 +3,13 @@ import logoFull from "./logo-full.svg";
 
 const App = () => (
   <div
+    className="h-screen flex items-center justify-center p-4"
     style={{
-      height: "100vh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
       backgroundColor: "#FBFBFF",
       color: "#757575",
     }}
   >
-    <img src={logoFull} style={{ maxWidth: "75%" }} alt="logo" />
+    <img src={logoFull} alt="logo" />
   </div>
 );
 
