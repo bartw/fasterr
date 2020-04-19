@@ -1,5 +1,7 @@
 import React from "react";
 import { Button, AlphaButton } from "./components/Button";
+import Highlight from "./components/Highlight";
+import ExternalLink from "./components/ExternalLink";
 import logoFull from "./assets/logo-full.svg";
 import logo from "./assets/logo.svg";
 import fileAnalysis from "./assets/file-analysis.svg";
@@ -20,49 +22,38 @@ const App = () => (
         <img className="" src={fileAnalysis} alt="file-analysis" />
         <p className="mt-4">
           According to{" "}
-          <a
-            className="underline"
+          <ExternalLink
             href="https://en.wikipedia.org/wiki/Intermittent_fasting"
+            label="intermittent fasting on wikipedia"
           >
             Wikipedia
-          </a>
-          ,{" "}
-          <span className="text-beta font-semibold">intermittent fasting</span>,
-          also known as intermittent energy restriction, is an umbrella term for
-          various meal timing schedules that cycle between voluntary fasting (or
-          reduced calories intake) and non-fasting over a given period.
+          </ExternalLink>
+          , <Highlight>intermittent fasting</Highlight>, also known as
+          intermittent energy restriction, is an umbrella term for various meal
+          timing schedules that cycle between voluntary fasting (or reduced
+          calories intake) and non-fasting over a given period.
         </p>
         <p className="mt-2">
-          Intermittent fasting may produce{" "}
-          <span className="text-beta font-semibold">weight loss</span>,{" "}
-          <span className="text-beta font-semibold">
-            reduce insulin resistance
-          </span>
-          , and{" "}
-          <span className="text-beta font-semibold">
-            lower the risk of cardiometabolic diseases
-          </span>
-          , although its long-term sustainability is unknown.
+          Intermittent fasting may produce <Highlight>weight loss</Highlight>,{" "}
+          <Highlight>reduce insulin resistance</Highlight>, and{" "}
+          <Highlight>lower the risk of cardiometabolic diseases</Highlight>,
+          although its long-term sustainability is unknown.
         </p>
         <p className="mt-2">
-          <span className="text-beta font-semibold">Fasterr</span> allows you to{" "}
-          <span className="text-beta font-semibold">track</span> your{" "}
-          <span className="text-beta font-semibold">weight</span> and your{" "}
-          <span className="text-beta font-semibold">fasting cycles</span>. This
-          enables you to{" "}
-          <span className="text-beta font-semibold">analyse</span> if
-          intermittent fasting is working for you.
+          <Highlight>Fasterr</Highlight> allows you to{" "}
+          <Highlight>track</Highlight> your <Highlight>weight</Highlight> and
+          your <Highlight>fasting cycles</Highlight>. This enables you to{" "}
+          <Highlight>analyse</Highlight> if intermittent fasting is working for
+          you.
         </p>
         <div className="my-16 text-center">
           <AlphaButton>Sign up now</AlphaButton>
         </div>
         <p className="mb-8">
-          Please{" "}
-          <span className="text-beta font-semibold">consult a doctor</span>{" "}
-          before performing any kind of diet change including intermittent
-          fasting. Fasterr <span className="text-beta font-semibold">only</span>{" "}
-          tracks and visualizes your weight and fasting cycles. It does{" "}
-          <span className="text-beta font-semibold">not</span> provide medical
+          Please <Highlight>consult a doctor</Highlight> before performing any
+          kind of diet change including intermittent fasting. Fasterr{" "}
+          <Highlight>only</Highlight> tracks and visualizes your weight and
+          fasting cycles. It does <Highlight>not</Highlight> provide medical
           adivice.
         </p>
       </main>
