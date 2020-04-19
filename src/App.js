@@ -1,15 +1,13 @@
-// @flow
-
 import React, { useState } from "react";
 import Auth, { AuthContext, useIsAuthenticated } from "./auth";
 import Layout from "./Layout";
-import AuthorizedApp from "./AuthorizedApp";
-import UnauthorizedApp from "./UnauthorizedApp";
+import AuthenticatedApp from "./AuthenticatedApp";
+import UnauthenticatedApp from "./UnauthenticatedApp";
 
 const AppWithAuth = () => {
   const isAuthenticated = useIsAuthenticated();
 
-  return isAuthenticated ? <AuthorizedApp /> : <UnauthorizedApp />;
+  return isAuthenticated ? <AuthenticatedApp /> : <UnauthenticatedApp />;
 };
 
 const App = () => {

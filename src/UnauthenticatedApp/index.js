@@ -1,12 +1,10 @@
-// @flow
-
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 
-const UnauthorizedApp = () => (
+const UnauthenticatedApp = () => (
   <Router>
     <Switch>
       <Route path="/sign-in" component={SignIn} />
@@ -16,4 +14,4 @@ const UnauthorizedApp = () => (
   </Router>
 );
 
-export default UnauthorizedApp;
+export default UnauthenticatedApp;
