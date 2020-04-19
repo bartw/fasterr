@@ -34,6 +34,8 @@ class Auth {
           isAuthenticated = false;
           fireCallbacks();
           break;
+        case "configured":
+          break;
         default:
           console.log("unhandled auth event:", data.payload.event);
       }
