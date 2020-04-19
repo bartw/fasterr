@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, AlphaButton } from "../components/Button";
+import { Button, PrimaryButton } from "../components/Button";
 import BaseLayout from "../Layout";
 
 const LogoWrapper = ({ children }) => (
@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
           <Button>Sign in</Button>
         </Link>
         <Link to="/sign-up">
-          <AlphaButton className="ml-4">Sign up</AlphaButton>
+          <PrimaryButton className="ml-4">Sign up</PrimaryButton>
         </Link>
       </>
     }

@@ -4,7 +4,7 @@ import NoHoverButton from './NoHoverButton';
 const Button = ({ className, onClick, children }) => (
   <NoHoverButton
     onClick={onClick}
-    className={`hover:bg-gray-200 ${className}`}
+    className={`bg-gray-100 hover:bg-gray-300 ${className}`}
   >
     {children}
   </NoHoverButton>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Box from "../components/Box";
-import { AlphaButton } from "../components/Button";
+import { PrimaryButton } from "../components/Button";
 import FormElement from "../components/FormElement";
 import Input from "../components/Input";
 import Layout from "./Layout";
@@ -35,7 +35,7 @@ const SignUp = () => {
               onChange={setPassword}
             />
           </FormElement>
-          <AlphaButton className="mt-8 w-full">Sign up for Fasterr</AlphaButton>
+          <PrimaryButton className="mt-8 w-full">Sign up for Fasterr</PrimaryButton>
         </form>
       </Box>
     </Layout>

@@ -9,7 +9,7 @@ const Layout = ({ logoWrapper = EmptyWrapper, nav, children }) => {
   const LogoWrapper = logoWrapper;
 
   return (
-    <div className="min-h-screen bg-gray-100 text-alpha antialiased">
+    <div className="min-h-screen bg-gray-100 text-gray-700">
       <div className="max-w-4xl mx-auto">
         <header className="px-2 py-4 h-32 flex items-start">
           <LogoWrapper>
