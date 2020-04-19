@@ -1,19 +1,31 @@
 // @flow
 
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import SignUp from "./SignUp";
-import SignIn from "./SignIn";
+import React, { useState } from "react";
+import Auth, { AuthContext, useIsAuthenticated } from "./auth";
+import Layout from "./Layout";
+import AuthorizedApp from "./AuthorizedApp";
+import UnauthorizedApp from "./UnauthorizedApp";
 
-const App = () => (
-  <Router>
-    <Switch>
-      <Route path="/sign-in" component={SignIn} />
-      <Route path="/sign-up" component={SignUp} />
-      <Route path="/" component={LandingPage} />
-    </Switch>
-  </Router>
-);
+const AppWithAuth = () => {
+  const isAuthenticated = useIsAuthenticated();
+
+  return isAuthenticated ? <AuthorizedApp /> : <UnauthorizedApp />;
+};
+
+const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  const auth = new Auth();
+
+  auth.initialize().finally(() => setLoading(false));
+
+  return loading ? (
+    <Layout />
+  ) : (
+    <AuthContext.Provider value={auth}>
+      <AppWithAuth />
+    </AuthContext.Provider>
+  );
+};
 
 export default App;

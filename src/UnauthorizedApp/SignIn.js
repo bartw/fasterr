@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Box from "./components/Box";
-import { Button } from "./components/Button";
-import FormElement from "./components/FormElement";
-import Input from "./components/Input";
+import Box from "../components/Box";
+import { Button } from "../components/Button";
+import FormElement from "../components/FormElement";
+import Input from "../components/Input";
 import Layout from "./Layout";
 
 const SignIn = () => {

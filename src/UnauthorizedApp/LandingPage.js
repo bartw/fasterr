@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AlphaButton } from "./components/Button";
-import Highlight from "./components/Highlight";
-import ExternalLink from "./components/ExternalLink";
-import fileAnalysis from "./assets/file-analysis.svg";
+import { AlphaButton } from "../components/Button";
+import Highlight from "../components/Highlight";
+import ExternalLink from "../components/ExternalLink";
+import fileAnalysis from "../assets/file-analysis.svg";
 import Layout from "./Layout";
 
 const App = () => (
