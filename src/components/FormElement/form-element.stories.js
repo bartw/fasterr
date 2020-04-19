@@ -9,7 +9,7 @@ export default {
 
 const Wrapper = () => {
   const [value, setValue] = useState("");
-  
+
   return (
     <FormElement label="Form element">
       <Input placeholder="input" value={value} onChange={setValue} />

@@ -35,7 +35,9 @@ const SignUp = () => {
               onChange={setPassword}
             />
           </FormElement>
-          <PrimaryButton className="mt-8 w-full">Sign up for Fasterr</PrimaryButton>
+          <PrimaryButton className="mt-8 w-full">
+            Sign up for Fasterr
+          </PrimaryButton>
         </form>
       </Box>
     </Layout>

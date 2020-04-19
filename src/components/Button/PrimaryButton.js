@@ -1,5 +1,5 @@
 import React from "react";
-import NoHoverButton from './NoHoverButton';
+import NoHoverButton from "./NoHoverButton";
 
 const PrimaryButton = ({ className, onClick, children }) => (
   <NoHoverButton
