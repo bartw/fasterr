@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Box from "./components/Box";
 import { AlphaButton } from "./components/Button";
 import FormElement from "./components/FormElement";
 import Input from "./components/Input";
@@ -16,11 +17,8 @@ const SignUp = () => {
 
   return (
     <Layout>
-      <div className="flex justify-center">
-        <form
-          className="border-2 rounded-md border-beta p-8 w-full sm:w-1/2"
-          onSubmit={handleSubmit}
-        >
+      <Box className="sm:w-1/2 sm:mx-auto">
+        <form onSubmit={handleSubmit}>
           <FormElement label="Email">
             <Input
               type="email"
@@ -39,7 +37,7 @@ const SignUp = () => {
           </FormElement>
           <AlphaButton className="mt-8 w-full">Sign up for Fasterr</AlphaButton>
         </form>
-      </div>
+      </Box>
     </Layout>
   );
 };
