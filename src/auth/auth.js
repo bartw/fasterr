@@ -75,7 +75,7 @@ class Auth {
       .catch(() => null);
   }
 
-  signup({ email, password }) {
+  signUp({ email, password }) {
     return AmplifyAuth.signUp({
       username: email,
       password,
@@ -83,11 +83,19 @@ class Auth {
     }).then(() => {});
   }
 
-  login({ email, password }) {
+  confirmSignUp({ email, confirmationCode }) {
+    return AmplifyAuth.confirmSignUp(email, confirmationCode).then(() => {});
+  }
+
+  resendConfirmationCode({ email }) {
+    return AmplifyAuth.resendSignUp(email).then(() => {});
+  }
+
+  signIn({ email, password }) {
     return AmplifyAuth.signIn(email, password).then(() => {});
   }
 
-  logout() {
+  signOut() {
     AmplifyAuth.signOut();
   }
 }
