@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import logoFull from "./assets/logo-full.svg";
 import logo from "./assets/logo.svg";
 
@@ -8,7 +9,7 @@ const Layout = ({ logoWrapper = EmptyWrapper, nav, children }) => {
   const LogoWrapper = logoWrapper;
 
   return (
-    <div className="min-h-screen bg-gray-100 text-alpha">
+    <div className="min-h-screen bg-gray-100 text-alpha antialiased">
       <div className="max-w-4xl mx-auto">
         <header className="px-2 py-4 h-32 flex items-start">
           <LogoWrapper>
@@ -18,7 +19,13 @@ const Layout = ({ logoWrapper = EmptyWrapper, nav, children }) => {
           <div className="flex-1"></div>
           <nav>{nav}</nav>
         </header>
-        <main className="mt-8 px-2">{children}</main>
+        <motion.main
+          className="mt-8 px-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          {children}
+        </motion.main>
       </div>
     </div>
   );
