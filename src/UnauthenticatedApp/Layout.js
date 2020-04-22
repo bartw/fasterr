@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, PrimaryButton } from "../components/Button";
 import BaseLayout from "../Layout";
+import InternalLink from "../components/InternalLink";
+import InternalLinkButton from "../components/InternalLinkButton";
 
 const LogoWrapper = ({ children }) => (
   <Link to="/" className="h-full">
@@ -14,12 +15,8 @@ const Layout = ({ children }) => (
     logoWrapper={LogoWrapper}
     nav={
       <>
-        <Link to="/sign-in">
-          <Button>Sign in</Button>
-        </Link>
-        <Link to="/sign-up">
-          <PrimaryButton className="ml-4">Sign up</PrimaryButton>
-        </Link>
+        <InternalLink to="sign-in">Sign in</InternalLink>
+        <InternalLinkButton to="sign-up">Sign up</InternalLinkButton>
       </>
     }
   >

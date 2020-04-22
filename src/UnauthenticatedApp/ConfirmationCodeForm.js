@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PrimaryButton, Button } from "../components/Button";
+import Button from "../components/Button";
 import FormElement from "../components/FormElement";
 import Input from "../components/Input";
 import { useAuth } from "../auth";
@@ -32,7 +32,7 @@ const ConfirmationCodeForm = ({ email, setPendingConfirmationCode }) => {
         />
       </FormElement>
       <div className="mt-8 w-full">
-        <PrimaryButton type="submit">Confirm sign up</PrimaryButton>
+        <Button type="submit">Confirm sign up</Button>
         <Button className="ml-4" onClick={handleResendConfirmationCode}>
           Resend confirmation code
         </Button>

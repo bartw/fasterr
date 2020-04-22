@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PrimaryButton } from "../components/Button";
+import Button from "../components/Button";
 import Highlight from "../components/Highlight";
 import ExternalLink from "../components/ExternalLink";
 import fileAnalysis from "../assets/file-analysis.svg";
@@ -36,7 +36,7 @@ const App = () => (
     </p>
     <div className="my-16 text-center">
       <Link to="/sign-up">
-        <PrimaryButton>Sign up now</PrimaryButton>
+        <Button>Sign up now</Button>
       </Link>
     </div>
     <p>

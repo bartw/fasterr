@@ -11,7 +11,7 @@ const Input = ({
     placeholder={placeholder}
     value={value}
     onChange={(e) => onChange(e.target.value)}
-    className="border-2 rounded-md border-gray-700 p-2 w-full"
+    className="border-2 rounded border-gray-200 bg-white p-2 w-full"
   />
 );
 

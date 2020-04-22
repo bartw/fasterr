@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { Button, PrimaryButton } from ".";
+import Button from ".";
 
 export default {
   component: Button,
@@ -8,7 +8,3 @@ export default {
 };
 
 export const button = () => <Button onClick={action("clicked")}>Button</Button>;
-
-export const primaryButton = () => (
-  <PrimaryButton onClick={action("clicked")}>Primary Button</PrimaryButton>
-);

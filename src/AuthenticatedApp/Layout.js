@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../components/Button";
+import Button from "../components/Button";
 import BaseLayout from "../Layout";
 import { useAuth } from "../auth";
 

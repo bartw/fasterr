@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Box from "../components/Box";
-import { Button } from "../components/Button";
+import Button from "../components/Button";
 import FormElement from "../components/FormElement";
 import Input from "../components/Input";
 import { useAuth } from "../auth";
@@ -26,7 +25,7 @@ const SignIn = () => {
 
   return (
     <Layout>
-      <Box className="sm:w-1/2 sm:mx-auto">
+      <div className="sm:w-1/2 sm:mx-auto">
         {!pendingConfirmationCode && (
           <form onSubmit={handleSubmit}>
             <FormElement label="Email">
@@ -56,7 +55,7 @@ const SignIn = () => {
             setPendingConfirmationCode={setPendingConfirmationCode}
           />
         )}
-      </Box>
+      </div>
     </Layout>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Box from "../components/Box";
-import { PrimaryButton } from "../components/Button";
+import Button from "../components/Button";
 import FormElement from "../components/FormElement";
 import Input from "../components/Input";
 import { useAuth } from "../auth";
@@ -24,7 +23,7 @@ const SignUp = () => {
 
   return (
     <Layout>
-      <Box className="sm:w-1/2 sm:mx-auto">
+      <div className="sm:w-1/2 sm:mx-auto">
         {!pendingConfirmationCode && (
           <form onSubmit={handleSignUp}>
             <FormElement label="Email">
@@ -43,9 +42,9 @@ const SignUp = () => {
                 onChange={setPassword}
               />
             </FormElement>
-            <PrimaryButton type="submit" className="mt-8 w-full">
+            <Button type="submit" className="mt-8 w-full">
               Sign up for Fasterr
-            </PrimaryButton>
+            </Button>
           </form>
         )}
         {pendingConfirmationCode && (
@@ -54,7 +53,7 @@ const SignUp = () => {
             setPendingConfirmationCode={setPendingConfirmationCode}
           />
         )}
-      </Box>
+      </div>
     </Layout>
   );
 };
