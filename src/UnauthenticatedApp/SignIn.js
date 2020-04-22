@@ -11,16 +11,21 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pendingConfirmationCode, setPendingConfirmationCode] = useState(false);
+  const [pending, setPending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    auth.signIn({ email, password }).catch(({ code }) => {
-      console.log(code);
-      if (code === "UserNotConfirmedException") {
-        setPendingConfirmationCode(true);
-      }
-    });
+    setPending(true);
+
+    auth
+      .signIn({ email, password })
+      .catch(({ code }) => {
+        if (code === "UserNotConfirmedException") {
+          setPendingConfirmationCode(true);
+        }
+      })
+      .finally(() => setPending(false));
   };
 
   return (
@@ -44,7 +49,11 @@ const SignIn = () => {
                 onChange={setPassword}
               />
             </FormElement>
-            <Button type="submit" className="mt-8 w-full">
+            <Button
+              type="submit"
+              state={pending ? "pending" : "default"}
+              className="mt-8 w-full"
+            >
               Sign in
             </Button>
           </form>
