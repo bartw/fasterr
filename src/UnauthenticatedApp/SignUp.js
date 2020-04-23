@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
+import ErrorFeedback from "../components/ErrorFeedback";
 import FormElement from "../components/FormElement";
 import Input from "../components/Input";
 import { useAuth } from "../auth";
@@ -11,14 +12,27 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pendingConfirmationCode, setPendingConfirmationCode] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const handleSignUp = (e) => {
     e.preventDefault();
 
-    auth.signUp({ email, password }).then(() => {
-      setPendingConfirmationCode(true);
-      setPassword("");
-    });
+    setHasError(false);
+    setPending(true);
+
+    auth
+      .signUp({ email, password })
+      .then(() => {
+        setPendingConfirmationCode(true);
+        setPassword("");
+      })
+      .catch(() => {
+        setHasError(true);
+      })
+      .finally(() => {
+        setPending(false);
+      });
   };
 
   return (
@@ -42,9 +56,14 @@ const SignUp = () => {
                 onChange={setPassword}
               />
             </FormElement>
-            <Button type="submit" className="mt-8 w-full">
+            <Button
+              type="submit"
+              state={pending ? "pending" : "default"}
+              className="mt-8 w-full"
+            >
               Sign up for Fasterr
             </Button>
+            {hasError && <ErrorFeedback />}
           </form>
         )}
         {pendingConfirmationCode && (

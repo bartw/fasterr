@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
+import ErrorFeedback from "../components/ErrorFeedback";
 import FormElement from "../components/FormElement";
 import Input from "../components/Input";
 import { useAuth } from "../auth";
@@ -12,20 +13,22 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [pendingConfirmationCode, setPendingConfirmationCode] = useState(false);
   const [pending, setPending] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    setHasError(false);
     setPending(true);
 
-    auth
-      .signIn({ email, password })
-      .catch(({ code }) => {
-        if (code === "UserNotConfirmedException") {
-          setPendingConfirmationCode(true);
-        }
-      })
-      .finally(() => setPending(false));
+    auth.signIn({ email, password }).catch(({ code }) => {
+      if (code === "UserNotConfirmedException") {
+        setPendingConfirmationCode(true);
+        return;
+      }
+      setPending(false);
+      setHasError(true);
+    });
   };
 
   return (
@@ -56,6 +59,7 @@ const SignIn = () => {
             >
               Sign in
             </Button>
+            {hasError && <ErrorFeedback />}
           </form>
         )}
         {pendingConfirmationCode && (
